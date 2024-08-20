@@ -16,7 +16,7 @@ The top-down approach was adopted for designing the database structure. In this 
      - `EmployeeID`: References the employee who handled the order.
      - `CustomerID`: References the customer who placed the order.
    - **Relationships:**
-     - Linked to `OrderDetails`, `Employee`, and `Customer`.
+     - **One to Many:** Linked to `OrderDetails`, `Employee`, and `Customer`.
 
 ### 2. **OrderDetails**
    - **Primary Key:** `OrderDetailsID`
@@ -25,7 +25,7 @@ The top-down approach was adopted for designing the database structure. In this 
      - `ProductID`: References the product included in the order.
      - `Quantity`: The quantity of the product in the order.
    - **Relationships:**
-     - Linked to `Order` and `Product`.
+     - **One to Many:** Linked to `Order` and `Product`.
 
 ### 3. **Customer**
    - **Primary Key:** `CustomerID`
@@ -33,7 +33,7 @@ The top-down approach was adopted for designing the database structure. In this 
      - `CustomerName`: The name of the customer.
      - `CustomerPhone`: The customer's contact number.
    - **Relationships:**
-     - Linked to `Order`.
+     - **One to One:** Linked to `Order`.
 
 ### 4. **Employee**
    - **Primary Key:** `EmployeeID`
@@ -44,7 +44,7 @@ The top-down approach was adopted for designing the database structure. In this 
      - `Salary`: The salary of the employee.
      - `StoreID`: References the store where the employee works.
    - **Relationships:**
-     - Linked to `Order` and `Store`.
+     - **One to Many:** Linked to `Order` and `Store`.
 
 ### 5. **Product**
    - **Primary Key:** `ProductID`
@@ -53,7 +53,7 @@ The top-down approach was adopted for designing the database structure. In this 
      - `Price`: The price of the product.
      - `Category`: The category of the product (e.g., Burger, Drink, Dessert).
    - **Relationships:**
-     - Linked to `OrderDetails`.
+     - **One to One:** Linked to `OrderDetails`.
 
 ### 6. **Store**
    - **Primary Key:** `StoreID`
@@ -61,7 +61,7 @@ The top-down approach was adopted for designing the database structure. In this 
      - `StoreLocation`: The location of the store.
      - `ManagerID`: References the employee who manages the store.
    - **Relationships:**
-     - Linked to `Employee`.
+     - **One to One:** Linked to `Employee`.
 
 ## Usage
 
