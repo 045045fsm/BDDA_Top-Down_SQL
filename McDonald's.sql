@@ -8,7 +8,8 @@ CREATE TABLE Employee (
     LastName VARCHAR(50),
     Position VARCHAR(50),
     Salary DECIMAL(10, 2),
-    StoreID INT
+    StoreID INT,
+    ManagerID INT
 );
 
 -- Store Table 
