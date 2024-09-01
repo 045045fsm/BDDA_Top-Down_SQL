@@ -62,12 +62,12 @@ INSERT INTO Store (StoreLocation, ManagerID) VALUES ('Los Angeles', NULL);
 INSERT INTO Store (StoreLocation, ManagerID) VALUES ('Chicago', NULL);
 
 -- Employee Data
-INSERT INTO Employee (FirstName, LastName, Position, Salary, StoreID) 
-VALUES ('John', 'Doe', 'Manager', 60000.00, 1);
-INSERT INTO Employee (FirstName, LastName, Position, Salary, StoreID) 
-VALUES ('Jane', 'Smith', 'Cashier', 35000.00, 2);
-INSERT INTO Employee (FirstName, LastName, Position, Salary, StoreID) 
-VALUES ('Michael', 'Johnson', 'Cook', 40000.00, 3);
+INSERT INTO Employee (FirstName, LastName, Position, Salary, StoreID, ManagerID) 
+VALUES ('John', 'Doe', 'Manager', 60000.00, 1, 1);
+INSERT INTO Employee (FirstName, LastName, Position, Salary, StoreID, ManagerID) 
+VALUES ('Jane', 'Smith', 'Cashier', 35000.00, 2, 2);
+INSERT INTO Employee (FirstName, LastName, Position, Salary, StoreID, ManagerID) 
+VALUES ('Michael', 'Johnson', 'Cook', 40000.00, 3, 3);
 
 UPDATE Store SET ManagerID = 1 WHERE StoreID = 1;
 UPDATE Store SET ManagerID = 2 WHERE StoreID = 2;
