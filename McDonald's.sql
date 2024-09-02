@@ -4,9 +4,9 @@ USE McDonaldsDB;
 -- Employee Table
 CREATE TABLE Employee (
     EmployeeID INT PRIMARY KEY AUTO_INCREMENT,
-    FirstName VARCHAR(50),
-    LastName VARCHAR(50),
-    Position VARCHAR(50),
+    FirstName VARCHAR(20),
+    LastName VARCHAR(20),
+    Position VARCHAR(20),
     Salary DECIMAL(10, 2),
     StoreID INT
 );
@@ -14,7 +14,7 @@ CREATE TABLE Employee (
 -- Store Table 
 CREATE TABLE Store (
     StoreID INT PRIMARY KEY AUTO_INCREMENT,
-    StoreLocation VARCHAR(100),
+    StoreLocation VARCHAR(50),
     ManagerID INT,
     FOREIGN KEY (ManagerID) REFERENCES Employee(EmployeeID) ON DELETE SET NULL
 );
@@ -22,23 +22,23 @@ CREATE TABLE Store (
 -- Product Table
 CREATE TABLE Product (
     ProductID INT PRIMARY KEY AUTO_INCREMENT,
-    ProductName VARCHAR(100),
+    ProductName VARCHAR(20),
     Price DECIMAL(10, 2),
-    Category VARCHAR(50)
+    Category VARCHAR(15)
 );
 
 -- Customer Table
 CREATE TABLE Customer (
     CustomerID INT PRIMARY KEY AUTO_INCREMENT,
-    CustomerName VARCHAR(100),
-    CustomerPhone VARCHAR(15)
+    CustomerName VARCHAR(25),
+    CustomerPhone VARCHAR(10)
 );
 
 -- Order Table
 CREATE TABLE `Order` (
     OrderID INT PRIMARY KEY AUTO_INCREMENT,
     OrderDate DATE,
-    TotalAmount DECIMAL(10, 2),
+    TotalAmount DECIMAL(8, 2),
     EmployeeID INT,
     CustomerID INT,
     FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID) ON DELETE CASCADE,
