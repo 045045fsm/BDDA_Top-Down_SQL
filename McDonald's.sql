@@ -3,7 +3,7 @@ USE McDonaldsDB;
 
 -- Employee Table
 CREATE TABLE Employee (
-    EmployeeID INT PRIMARY KEY,
+    EmployeeID CHAR (6) PRIMARY KEY,
     FirstName VARCHAR(20),
     LastName VARCHAR(20),
     Position VARCHAR(20),
@@ -13,7 +13,7 @@ CREATE TABLE Employee (
 
 -- Store Table 
 CREATE TABLE Store (
-    StoreID INT PRIMARY KEY,
+    StoreID CHAR (6) PRIMARY KEY,
     StoreLocation VARCHAR(50),
     ManagerID INT,
     FOREIGN KEY (ManagerID) REFERENCES Employee(EmployeeID) ON DELETE SET NULL
@@ -21,7 +21,7 @@ CREATE TABLE Store (
 
 -- Product Table
 CREATE TABLE Product (
-    ProductID INT PRIMARY KEY,
+    ProductID CHAR (6) PRIMARY KEY,
     ProductName VARCHAR(20),
     Price DECIMAL(10, 2),
     Category VARCHAR(15)
@@ -29,28 +29,28 @@ CREATE TABLE Product (
 
 -- Customer Table
 CREATE TABLE Customer (
-    CustomerID INT PRIMARY KEY,
+    CustomerID CHAR (6) PRIMARY KEY,
     CustomerName VARCHAR(25),
     CustomerPhone VARCHAR(10)
 );
 
 -- Order Table
 CREATE TABLE `Order` (
-    OrderID INT PRIMARY KEY,
+    OrderID CHAR (6) PRIMARY KEY,
     OrderDate DATE,
     TotalAmount DECIMAL(8, 2),
-    EmployeeID INT,
-    CustomerID INT,
+    EmployeeID CHAR (6),
+    CustomerID CHAR (6),
     FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID) ON DELETE CASCADE,
     FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE
 );
 
 -- OrderDetails Table
 CREATE TABLE OrderDetails (
-    OrderDetailsID INT PRIMARY KEY,
-    OrderID INT,
-    ProductID INT,
-    Quantity INT,
+    OrderDetailsID CHAR (6) PRIMARY KEY,
+    OrderID CHAR (6),
+    ProductID CHAR (6),
+    Quantity CHAR (6),
     FOREIGN KEY (OrderID) REFERENCES `Order`(OrderID) ON DELETE CASCADE,
     FOREIGN KEY (ProductID) REFERENCES Product(ProductID) ON DELETE CASCADE
 );
