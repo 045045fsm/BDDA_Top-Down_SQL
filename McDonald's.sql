@@ -8,14 +8,14 @@ CREATE TABLE Employee (
     LastName VARCHAR(20),
     Position VARCHAR(20),
     Salary DECIMAL(10, 2),
-    StoreID INT
+    StoreID CHAR (6)
 );
 
 -- Store Table 
 CREATE TABLE Store (
     StoreID CHAR (6) PRIMARY KEY,
     StoreLocation VARCHAR(50),
-    ManagerID INT,
+    ManagerID CHAR (6),
     FOREIGN KEY (ManagerID) REFERENCES Employee(EmployeeID) ON DELETE SET NULL
 );
 
